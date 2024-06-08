@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
+import '../styles/global.css' // TODO 删除这句，套用了layout的样式没有必要再用全局
 const identity = {
   nickName: "vcc",
   job: "frontend developer",
@@ -13,7 +14,7 @@ const skills = [
   "vue",
   "miniprogram",
 ];
-const yearCount = new Date('2023')
+const primaryColor = 'lightPink'
 ---
 
 <Layout
@@ -22,20 +23,27 @@ const yearCount = new Date('2023')
   pubDate={new Date("August 08 2021")}
   heroImage="/blog-placeholder-about.jpg"
 >
+  <style define:vars={{primaryColor}}>
+    .skill {
+      color: var(--primaryColor);
+    }
+  </style>
   <p>
-    there is nothing to say about me but only one thing that i'd like to tell
+    There is nothing to say about me but only one thing that i'd like to tell
     you.
   </p>
-  <p>i am learning astro now</p>
-  <p>and here is my introduce about me</p>
+  <p>I am learning astro now</p>
+  <p>And here is my introduce about me</p>
   <ul>
     <li>NickName: {identity.nickName}</li>
     <li>Job: {identity.job}</li>
   </ul>
   <p>Skills:</p>
   <ul>
-    {skills.map(skill=>{
-      return <li>{skill}</li>
-    })}
+    {
+      skills.map((skill) => {
+        return <li class="skill">{skill}</li>;
+      })
+    }
   </ul>
 </Layout>
