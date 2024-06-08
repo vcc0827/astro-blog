@@ -1,5 +1,19 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
+const identity = {
+  nickName: "vcc",
+  job: "frontend developer",
+};
+const skills = [
+  "html",
+  "css",
+  "javascript",
+  "Astro",
+  "typescript",
+  "vue",
+  "miniprogram",
+];
+const yearCount = new Date('2023')
 ---
 
 <Layout
@@ -13,4 +27,15 @@ import Layout from "../layouts/BlogPost.astro";
     you.
   </p>
   <p>i am learning astro now</p>
+  <p>and here is my introduce about me</p>
+  <ul>
+    <li>NickName: {identity.nickName}</li>
+    <li>Job: {identity.job}</li>
+  </ul>
+  <p>Skills:</p>
+  <ul>
+    {skills.map(skill=>{
+      return <li>{skill}</li>
+    })}
+  </ul>
 </Layout>
