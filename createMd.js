@@ -16,19 +16,25 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+function formatDate(date) {
+  const options = { year: 'numeric', month: 'short', day: 'numeric' };
+  return date.toLocaleDateString('en-US', options).replace(/,/, '');
+}
+
 // 询问文件名和内容
 rl.question('请输入博客文章的文件名（不包含扩展名）：', (fileName) => {
   rl.question('title:', (title) => {
     rl.question('description:', (description) => {
       // 定义文件路径
-      const dirPath = path.join(__dirname, 'src', 'description', 'blog');
+      const dirPath = path.join(__dirname, 'src', 'content', 'blog');
       const filePath = path.join(dirPath, `${fileName}.md`);
-
+      const dateStr = formatDate(new Date())
       // 定义 Markdown 文件的内容
       const fileContent = `---
 title: "${title}"
 description: "${description}"
-pubDate: "${new Date().toISOString()}"
+pubDate: "${dateStr}"
+heroImage: "/blog-placeholder-4.jpg"
 ---
 `;
 
