@@ -1,19 +1,18 @@
 ---
-title: "Let's start writing blog!"
-description: "mpxjs开发记录---搭建项目"
-pubDate: "Jun 8 2024"
+title: "mpxjs开发记录1——搭建项目"
+description: "mpxjs开发记录"
+pubDate: "Sep 19 2024"
 heroImage: "/blog-placeholder-4.jpg"
 ---
-## 前言
+### 前言
 为了能实现小程序的多端通用，项目组决定使用mpxjs框架去重新构建当前的小程序。
 
-## mpxjs 介绍
+### mpxjs 介绍
 <a ref="https://mpxjs.cn/">官网</a> | <a ref="https://github.com/didi/mpx">github</a>
 
-## 项目开始
+### 项目开始
 
-### 搭建项目
-#### 这部分内容可以参考官网的教程
+| 这部分内容可以参考官网的教程
 ```
 // 创建项目-方式1
 // 安装脚手架
@@ -30,7 +29,7 @@ npm i
 // 启动项目(使用小程序开发者工具打开dist下对应平台的目录夹，即可进行调试)
 npm run serve
 ```
-#### 这是我在安装时的选择,可以根据自己的需求进行选择
+| 这是我在安装时的选择,可以根据自己的需求进行选择
 ```
 npx @mpxjs/cli create mpx-project
 ? 请选择小程序项目所属平台（目前仅微信下支持跨平台输出） wx
@@ -45,7 +44,7 @@ npx @mpxjs/cli create mpx-project
 // 官网给出的原因：创建插件项目由于微信限制必须填写插件的AppID，创建普通项目无强制要求。
 ```
 
-### 项目搭建完成后的结构
+#### 项目搭建完成后的结构
 ```
 mpx-project
 ├─ .cache
